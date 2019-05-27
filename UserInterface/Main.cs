@@ -10,7 +10,7 @@ namespace UserInterface
     public partial class Main : Form
     {
         #region Data declaration and definition
-        const string DataPath = @"\data";
+        const string DataPath = "data";
         const string Version = "V1.0";
         IOManager Manager = new IOManager(DataPath);
         XElement Configs;
