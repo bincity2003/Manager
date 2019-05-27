@@ -29,7 +29,7 @@ namespace UserInterface
                 }
                 catch (IndexOutOfRangeException)
                 {
-                    File.Delete($"C:\\ProgramData\\Manager\\{string.Concat(Configs.Element("employee").Element($"e{i}").Value.Split(' '))}.json");
+                    File.Delete($"data\\{string.Concat(Configs.Element("employee").Element($"e{i}").Value.Split(' '))}.json");
                     Configs.Element("employee").Element($"e{i}").Remove(); 
                 }
             }
@@ -39,7 +39,6 @@ namespace UserInterface
             }
 
             Configs.Element("employee").Attribute("count").Value = Count.ToString();
-            Configs.Save(@"C:\ProgramData\Manager\config.xml");
             Configs.Save("config.xml");
 
             Close();
