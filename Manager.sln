@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Backend", "Backend\Backend.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserInterface", "UserInterface\UserInterface.csproj", "{516E5BA4-2BA2-4155-9D65-A7376AF1A494}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Installer", "Installer\Installer.vdproj", "{75E62CFD-EE3D-475C-AD92-50857C70E420}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,8 @@ Global
 		{516E5BA4-2BA2-4155-9D65-A7376AF1A494}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{516E5BA4-2BA2-4155-9D65-A7376AF1A494}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{516E5BA4-2BA2-4155-9D65-A7376AF1A494}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75E62CFD-EE3D-475C-AD92-50857C70E420}.Debug|Any CPU.ActiveCfg = Debug
+		{75E62CFD-EE3D-475C-AD92-50857C70E420}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

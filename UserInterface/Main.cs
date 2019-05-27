@@ -10,9 +10,9 @@ namespace UserInterface
     public partial class Main : Form
     {
         #region Data declaration and definition
-        const string Path = @"C:\ProgramData\Manager";
-        const string Version = "V1.0.1.13";
-        IOManager Manager = new IOManager(Path);
+        const string DataPath = @"\data";
+        const string Version = "V1.0";
+        IOManager Manager = new IOManager(DataPath);
         XElement Configs;
 
         string EmployeeName;
@@ -29,20 +29,18 @@ namespace UserInterface
         }
         private void Setup()
         {
-            Directory.CreateDirectory(Path);
+            Directory.CreateDirectory(DataPath);
             try
             {
-                Configs = XElement.Load(Path + @"\config.xml");
+                Configs = XElement.Load(@"config.xml");
             }
-            catch (IOException)
+            catch
             {
-                Configs = XElement.Load("config.xml");
-                File.Copy("config.xml", Path + @"\config.xml");
+                throw new Exception("Configs missing!");
             }
 
             Configs.Element("version").Value = Version;
             Configs.Save("config.xml");
-            Configs.Save(Path + @"\config.xml");
 
             Text = "Manager - " + Configs.Element("version").Value;
 
