@@ -9,7 +9,7 @@ namespace UserInterface
 {
     public partial class Main : Form
     {
-        #region Data declaration
+        #region Data declaration and definition
         const string Path = @"C:\ProgramData\Manager";
         const string Version = "V1.0.1.13";
         IOManager Manager = new IOManager(Path);
