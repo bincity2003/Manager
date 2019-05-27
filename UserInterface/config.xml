@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <debug>true</debug>
+  <version>V0.1.1</version>
+  <employee count ="6">
+    <e1>Tran Pham Thanh Thuy</e1>
+    <e2>Cam Ngoc Thuy</e2>
+    <e3>Lu Mong Thuy Linh</e3>
+    <e4>Bui Nguyen Thanh Long</e4>
+    <e5>Le Huy Nguyen Tuan</e5>
+    <e6>Nguyen Hoang Vy</e6>
+  </employee>
+</configuration>
