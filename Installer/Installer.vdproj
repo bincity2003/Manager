@@ -3,7 +3,7 @@
 "VSVersion" = "3:800"
 "ProjectType" = "8:{978C614F-708E-4E1A-B201-565925725DBA}"
 "IsWebType" = "8:FALSE"
-"ProjectName" = "8:Installer"
+"ProjectName" = "8:Manager"
 "LanguageId" = "3:1033"
 "CodePage" = "3:1252"
 "UILanguageId" = "3:1033"
@@ -13,6 +13,12 @@
 "SccProvider" = "8:"
     "Hierarchy"
     {
+        "Entry"
+        {
+        "MsmKey" = "8:_4D1A275D1DB65B91579BD249630B4E58"
+        "OwnerKey" = "8:_50BBB2196690407E9F29C646689E900F"
+        "MsmSig" = "8:_UNDEFINED"
+        }
         "Entry"
         {
         "MsmKey" = "8:_50BBB2196690407E9F29C646689E900F"
@@ -28,13 +34,7 @@
         "Entry"
         {
         "MsmKey" = "8:_8619BCC6DE93DDD288FD6C40EA70C066"
-        "OwnerKey" = "8:_A1BCEBE7850FB495805DC2ED678EB264"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_A1BCEBE7850FB495805DC2ED678EB264"
-        "OwnerKey" = "8:_50BBB2196690407E9F29C646689E900F"
+        "OwnerKey" = "8:_4D1A275D1DB65B91579BD249630B4E58"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -58,7 +58,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_A1BCEBE7850FB495805DC2ED678EB264"
+        "OwnerKey" = "8:_4D1A275D1DB65B91579BD249630B4E58"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -168,20 +168,20 @@
         }
         "File"
         {
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_8619BCC6DE93DDD288FD6C40EA70C066"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_4D1A275D1DB65B91579BD249630B4E58"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:Backend, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_8619BCC6DE93DDD288FD6C40EA70C066"
+                    "_4D1A275D1DB65B91579BD249630B4E58"
                     {
-                    "Name" = "8:Newtonsoft.Json.dll"
+                    "Name" = "8:Backend.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:Newtonsoft.Json.dll"
+            "SourcePath" = "8:Backend.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_AF5199A2697C4A39942300930C7EB3C0"
@@ -199,20 +199,20 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_A1BCEBE7850FB495805DC2ED678EB264"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_8619BCC6DE93DDD288FD6C40EA70C066"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Backend, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_A1BCEBE7850FB495805DC2ED678EB264"
+                    "_8619BCC6DE93DDD288FD6C40EA70C066"
                     {
-                    "Name" = "8:Backend.dll"
+                    "Name" = "8:Newtonsoft.Json.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:Backend.dll"
+            "SourcePath" = "8:Newtonsoft.Json.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_AF5199A2697C4A39942300930C7EB3C0"
@@ -349,7 +349,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Installer"
         "ProductCode" = "8:{B80569F4-1F06-45CA-9410-BA54442797F0}"
-        "PackageCode" = "8:{18A37427-97E8-4F15-AD82-7FFDD91B54F1}"
+        "PackageCode" = "8:{62E1D8E1-43BB-4706-875E-63635E0D8EFD}"
         "UpgradeCode" = "8:{256559D9-C8E8-4E2E-89BE-EB97047AC402}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -870,7 +870,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_50BBB2196690407E9F29C646689E900F"
             {
-            "SourcePath" = "8:..\\UserInterface\\obj\\Debug\\UserInterface.exe"
+            "SourcePath" = "8:..\\UserInterface\\obj\\Release\\UserInterface.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_AF5199A2697C4A39942300930C7EB3C0"
