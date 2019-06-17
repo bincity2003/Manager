@@ -10,14 +10,16 @@ namespace UserInterface
     public partial class Main : Form
     {
         #region Data declaration and definition
+
         const string DataPath = "Data";
-        const string Version = "V1.0";
+        const string Version = "V1.1";
         IOManager Manager = new IOManager(DataPath);
         XElement Configs;
 
         string EmployeeName;
         List<Entry> Entries;
         BindingSource source;
+
         #endregion
 
         #region Startup
@@ -28,21 +30,23 @@ namespace UserInterface
             Setup();
         }
         private void Setup()
-        {
+        {        
             Directory.CreateDirectory(DataPath);
             try
             {
+                WriteLog("Reading configs");
                 Configs = XElement.Load(@"config.xml");
             }
             catch
             {
+                WriteLog("No configs");
                 throw new Exception("Configs missing!");
             }
 
             Configs.Element("version").Value = Version;
             Configs.Save("config.xml");
 
-            Text = "Manager - " + Configs.Element("version").Value;
+            Text = "Manager - " + Version;
 
             LoadEmployees();
         }
@@ -52,22 +56,24 @@ namespace UserInterface
         #region Control Handler
 
         private void ESelect_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Console.WriteLine((string)ESelect.SelectedValue);
+        {         
             EmployeeName = (string)ESelect.SelectedValue;
+            WriteLog("Employee changed to " + EmployeeName);
             Entries = RetrieveData();
             RefreshPanel();
         }
         private void AButton_Click(object sender, EventArgs e)
         {
             if (AButton.Text == "Edit")
-            {
+            {         
                 Entry Target = FindSelectedEntry();
+                WriteLog("Save existing entry: " + Target.Display);
                 Entries.Remove(Target);
                 AButton.Text = "Add";
             }
 
             Entry entry = new Entry(DText.Text, PCheck.Checked, DatePicker.Value);
+            WriteLog("Add new entry: " + entry.Display);
             Entries.Add(entry);
             RefreshPanel();
             ResetField();
@@ -75,12 +81,14 @@ namespace UserInterface
         private void DButton_Click(object sender, EventArgs e)
         {
             Entry Target = FindSelectedEntry();
+            WriteLog("Delete entry: " + Target.Display);
             Entries.Remove(Target);
             RefreshPanel();
         }
         private void EButton_Click(object sender, EventArgs e)
         {
             Entry Item = (Entry)TShow.SelectedValue;
+            WriteLog("Save existing entry: " + Item.Display);
             DText.Text = Item._desc;
             DatePicker.Value = Item._dl;
             PCheck.Checked = Item.Prioritized;
@@ -89,9 +97,11 @@ namespace UserInterface
         private void SButton_Click(object sender, EventArgs e)
         {
             PushEntries();
+            WriteLog("Save data for " + EmployeeName);
         }
         private void EditEmployeeToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            WriteLog("Open employee editor");
             Form prop = new Editor(Configs);
             prop.Activate();
             prop.Show();
@@ -156,6 +166,10 @@ namespace UserInterface
                 DataSource = Employees
             };
             ESelect.DataSource = source;
+        }
+        private void WriteLog(string data)
+        {
+            LogWriter.Write("log.txt", data, true);
         }
 
         #endregion  
