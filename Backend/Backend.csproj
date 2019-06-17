@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="Entry.cs" />
     <Compile Include="IOManager.cs" />
+    <Compile Include="LogWriter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
