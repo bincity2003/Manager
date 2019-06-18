@@ -48,6 +48,7 @@
             this.SButton = new System.Windows.Forms.Button();
             this.DButton = new System.Windows.Forms.Button();
             this.EButton = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -203,6 +204,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.ESelect);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
@@ -214,13 +216,12 @@
             // 
             // ESelect
             // 
-            this.ESelect.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ESelect.FormattingEnabled = true;
             this.ESelect.Items.AddRange(new object[] {
             "Test"});
             this.ESelect.Location = new System.Drawing.Point(3, 16);
             this.ESelect.Name = "ESelect";
-            this.ESelect.Size = new System.Drawing.Size(222, 21);
+            this.ESelect.Size = new System.Drawing.Size(147, 21);
             this.ESelect.TabIndex = 0;
             this.ESelect.SelectedIndexChanged += new System.EventHandler(this.ESelect_SelectedIndexChanged);
             // 
@@ -267,6 +268,15 @@
             this.EButton.UseVisualStyleBackColor = true;
             this.EButton.Click += new System.EventHandler(this.EButton_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(153, 14);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(72, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Attendance";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -311,6 +321,7 @@
         private System.Windows.Forms.ToolStripMenuItem editEmployeeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem advancedToolStripMenuItem;
         private System.Windows.Forms.CheckBox DCheck;
+        private System.Windows.Forms.Button button1;
     }
 }
 
