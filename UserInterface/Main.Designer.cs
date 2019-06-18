@@ -43,12 +43,12 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.TShow = new System.Windows.Forms.ListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.AForm = new System.Windows.Forms.Button();
             this.ESelect = new System.Windows.Forms.ComboBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.SButton = new System.Windows.Forms.Button();
             this.DButton = new System.Windows.Forms.Button();
             this.EButton = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -204,7 +204,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.AForm);
             this.groupBox1.Controls.Add(this.ESelect);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
@@ -213,6 +213,16 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Select";
+            // 
+            // AForm
+            // 
+            this.AForm.Location = new System.Drawing.Point(153, 14);
+            this.AForm.Name = "AForm";
+            this.AForm.Size = new System.Drawing.Size(72, 23);
+            this.AForm.TabIndex = 1;
+            this.AForm.Text = "Attendance";
+            this.AForm.UseVisualStyleBackColor = true;
+            this.AForm.Click += new System.EventHandler(this.AForm_Click);
             // 
             // ESelect
             // 
@@ -268,15 +278,6 @@
             this.EButton.UseVisualStyleBackColor = true;
             this.EButton.Click += new System.EventHandler(this.EButton_Click);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(153, 14);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(72, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Attendance";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -321,7 +322,7 @@
         private System.Windows.Forms.ToolStripMenuItem editEmployeeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem advancedToolStripMenuItem;
         private System.Windows.Forms.CheckBox DCheck;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button AForm;
     }
 }
 

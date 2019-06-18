@@ -119,6 +119,12 @@ namespace UserInterface
         {
             DatePicker.Enabled = DCheck.Checked;
         }
+        private void AForm_Click(object sender, EventArgs e)
+        {
+            Form form = new Attendance();
+            form.Activate();
+            form.Show();
+        }
 
         #endregion
 
@@ -185,8 +191,8 @@ namespace UserInterface
             LogWriter.Write("log.txt", data, true);
         }
 
+
         #endregion
 
-        
     }
 }
