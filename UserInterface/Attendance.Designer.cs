@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
@@ -38,12 +37,13 @@
             this.LastDay = new System.Windows.Forms.DateTimePicker();
             this.DButton = new System.Windows.Forms.Button();
             this.AButton = new System.Windows.Forms.Button();
-            this.HistoryBox = new System.Windows.Forms.ListBox();
             this.TotalDay = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.HistoryBox = new System.Windows.Forms.ListBox();
             this.tableLayoutPanel1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -62,18 +62,6 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(235, 249);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
-            // groupBox2
-            // 
-            this.tableLayoutPanel1.SetColumnSpan(this.groupBox2, 2);
-            this.groupBox2.Controls.Add(this.HistoryBox);
-            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox2.Location = new System.Drawing.Point(3, 110);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(229, 136);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "History";
-            // 
             // groupBox1
             // 
             this.tableLayoutPanel1.SetColumnSpan(this.groupBox1, 2);
@@ -91,7 +79,7 @@
             this.tableLayoutPanel2.ColumnCount = 3;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 54F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 83F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 69F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 86F));
             this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.label2, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.FirstDay, 1, 0);
@@ -154,6 +142,7 @@
             this.DButton.TabIndex = 5;
             this.DButton.Text = "Delete";
             this.DButton.UseVisualStyleBackColor = true;
+            this.DButton.Click += new System.EventHandler(this.DButton_Click);
             // 
             // AButton
             // 
@@ -164,15 +153,7 @@
             this.AButton.TabIndex = 6;
             this.AButton.Text = "Add";
             this.AButton.UseVisualStyleBackColor = true;
-            // 
-            // HistoryBox
-            // 
-            this.HistoryBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.HistoryBox.FormattingEnabled = true;
-            this.HistoryBox.Location = new System.Drawing.Point(3, 16);
-            this.HistoryBox.Name = "HistoryBox";
-            this.HistoryBox.Size = new System.Drawing.Size(223, 117);
-            this.HistoryBox.TabIndex = 0;
+            this.AButton.Click += new System.EventHandler(this.AButton_Click);
             // 
             // TotalDay
             // 
@@ -184,6 +165,27 @@
             this.TotalDay.TabIndex = 7;
             this.TotalDay.Text = "Total: ";
             // 
+            // groupBox2
+            // 
+            this.tableLayoutPanel1.SetColumnSpan(this.groupBox2, 2);
+            this.groupBox2.Controls.Add(this.HistoryBox);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox2.Location = new System.Drawing.Point(3, 110);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(229, 136);
+            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "History";
+            // 
+            // HistoryBox
+            // 
+            this.HistoryBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.HistoryBox.FormattingEnabled = true;
+            this.HistoryBox.Location = new System.Drawing.Point(3, 16);
+            this.HistoryBox.Name = "HistoryBox";
+            this.HistoryBox.Size = new System.Drawing.Size(223, 117);
+            this.HistoryBox.TabIndex = 0;
+            // 
             // Attendance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -193,10 +195,10 @@
             this.Name = "Attendance";
             this.Text = "Attendance";
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
