@@ -34,15 +34,16 @@
             this.advancedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.DCheck = new System.Windows.Forms.CheckBox();
             this.AButton = new System.Windows.Forms.Button();
             this.PCheck = new System.Windows.Forms.CheckBox();
             this.DatePicker = new System.Windows.Forms.DateTimePicker();
             this.DText = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.TShow = new System.Windows.Forms.ListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.AForm = new System.Windows.Forms.Button();
             this.ESelect = new System.Windows.Forms.ComboBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.SButton = new System.Windows.Forms.Button();
@@ -111,11 +112,11 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.DCheck);
             this.groupBox2.Controls.Add(this.AButton);
             this.groupBox2.Controls.Add(this.PCheck);
             this.groupBox2.Controls.Add(this.DatePicker);
             this.groupBox2.Controls.Add(this.DText);
-            this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(3, 51);
@@ -124,6 +125,17 @@
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Add new task";
+            // 
+            // DCheck
+            // 
+            this.DCheck.AutoSize = true;
+            this.DCheck.Location = new System.Drawing.Point(6, 46);
+            this.DCheck.Name = "DCheck";
+            this.DCheck.Size = new System.Drawing.Size(68, 17);
+            this.DCheck.TabIndex = 7;
+            this.DCheck.Text = "Deadline";
+            this.DCheck.UseVisualStyleBackColor = true;
+            this.DCheck.CheckedChanged += new System.EventHandler(this.DCheck_CheckedChanged);
             // 
             // AButton
             // 
@@ -138,7 +150,7 @@
             // PCheck
             // 
             this.PCheck.AutoSize = true;
-            this.PCheck.Location = new System.Drawing.Point(9, 69);
+            this.PCheck.Location = new System.Drawing.Point(6, 69);
             this.PCheck.Name = "PCheck";
             this.PCheck.Size = new System.Drawing.Size(82, 17);
             this.PCheck.TabIndex = 5;
@@ -147,9 +159,10 @@
             // 
             // DatePicker
             // 
-            this.DatePicker.Location = new System.Drawing.Point(58, 43);
+            this.DatePicker.Enabled = false;
+            this.DatePicker.Location = new System.Drawing.Point(81, 43);
             this.DatePicker.Name = "DatePicker";
-            this.DatePicker.Size = new System.Drawing.Size(168, 20);
+            this.DatePicker.Size = new System.Drawing.Size(145, 20);
             this.DatePicker.TabIndex = 4;
             // 
             // DText
@@ -158,15 +171,6 @@
             this.DText.Name = "DText";
             this.DText.Size = new System.Drawing.Size(157, 20);
             this.DText.TabIndex = 3;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 47);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Deadline";
             // 
             // label1
             // 
@@ -200,6 +204,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.AForm);
             this.groupBox1.Controls.Add(this.ESelect);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
@@ -209,15 +214,24 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Select";
             // 
+            // AForm
+            // 
+            this.AForm.Location = new System.Drawing.Point(153, 14);
+            this.AForm.Name = "AForm";
+            this.AForm.Size = new System.Drawing.Size(72, 23);
+            this.AForm.TabIndex = 1;
+            this.AForm.Text = "Attendance";
+            this.AForm.UseVisualStyleBackColor = true;
+            this.AForm.Click += new System.EventHandler(this.AForm_Click);
+            // 
             // ESelect
             // 
-            this.ESelect.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ESelect.FormattingEnabled = true;
             this.ESelect.Items.AddRange(new object[] {
             "Test"});
             this.ESelect.Location = new System.Drawing.Point(3, 16);
             this.ESelect.Name = "ESelect";
-            this.ESelect.Size = new System.Drawing.Size(222, 21);
+            this.ESelect.Size = new System.Drawing.Size(147, 21);
             this.ESelect.TabIndex = 0;
             this.ESelect.SelectedIndexChanged += new System.EventHandler(this.ESelect_SelectedIndexChanged);
             // 
@@ -295,7 +309,6 @@
         private System.Windows.Forms.CheckBox PCheck;
         private System.Windows.Forms.DateTimePicker DatePicker;
         private System.Windows.Forms.TextBox DText;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.ListBox TShow;
@@ -308,6 +321,8 @@
         private System.Windows.Forms.ToolStripMenuItem optionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editEmployeeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem advancedToolStripMenuItem;
+        private System.Windows.Forms.CheckBox DCheck;
+        private System.Windows.Forms.Button AForm;
     }
 }
 
