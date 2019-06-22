@@ -13,13 +13,16 @@ namespace UserInterface
     public partial class Attendance : Form
     {
         private List<Period> Periods;
-        BindingSource Source;
+        private BindingSource Source;
+        private readonly string EmployeeName;
 
-        public Attendance()
+        public Attendance(string name)
         {
             InitializeComponent();
+            EmployeeName = name;
         }
 
+        #region Control Handler
         private void DButton_Click(object sender, EventArgs e)
         {
             Periods.Remove(FindSelectedPeriod());
@@ -32,6 +35,8 @@ namespace UserInterface
             Periods.Add(period);
             RefreshPanel();
         }
+        #endregion
+
         #region Miscellaneous function
         public class Period
         {
@@ -70,7 +75,5 @@ namespace UserInterface
             HistoryBox.DisplayMember = "Display";
         }
         #endregion
-
-        
     }
 }

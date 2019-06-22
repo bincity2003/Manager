@@ -121,7 +121,7 @@ namespace UserInterface
         }
         private void AForm_Click(object sender, EventArgs e)
         {
-            Form form = new Attendance();
+            Form form = new Attendance(EmployeeName);
             form.Activate();
             form.Show();
         }
