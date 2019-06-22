@@ -9,7 +9,7 @@ namespace Backend
         public string _desc;
         public DateTime _dl;
 
-        public string Display => GetDesc(_desc);
+        public string Display => _dl == DateTime.Today ? SpecialGetDesc(_desc) : GetDesc(_desc);
 
         public Entry(string desc, bool pro, DateTime date)
         {
@@ -21,6 +21,11 @@ namespace Backend
         private string GetDesc(string desc)
         {
             return Prioritized ? $"{_dl.ToShortDateString()} - **{desc}**" : $"{_dl.ToShortDateString()} - {desc}";
+        }
+
+        private string SpecialGetDesc(string desc)
+        {
+            return Prioritized ? $"**{desc}**" : desc; 
         }
     }
 }

@@ -12,7 +12,7 @@ namespace UserInterface
         #region Data declaration and definition
 
         const string DataPath = "Data";
-        const string Version = "V1.1";
+        const string Version = "V1.2";
         IOManager Manager = new IOManager(DataPath);
         XElement Configs;
 
@@ -72,7 +72,16 @@ namespace UserInterface
                 AButton.Text = "Add";
             }
 
-            Entry entry = new Entry(DText.Text, PCheck.Checked, DatePicker.Value);
+            Entry entry;
+            if (DatePicker.Enabled)
+            {
+                entry = new Entry(DText.Text, PCheck.Checked, DatePicker.Value);              
+            }
+            else
+            {
+                entry = new Entry(DText.Text, PCheck.Checked, DateTime.Today);
+            }
+
             WriteLog("Add new entry: " + entry.Display);
             Entries.Add(entry);
             RefreshPanel();
@@ -105,6 +114,16 @@ namespace UserInterface
             Form prop = new Editor(Configs);
             prop.Activate();
             prop.Show();
+        }
+        private void DCheck_CheckedChanged(object sender, EventArgs e)
+        {
+            DatePicker.Enabled = DCheck.Checked;
+        }
+        private void AForm_Click(object sender, EventArgs e)
+        {
+            Form form = new Attendance(EmployeeName);
+            form.Activate();
+            form.Show();
         }
 
         #endregion
@@ -172,6 +191,8 @@ namespace UserInterface
             LogWriter.Write("log.txt", data, true);
         }
 
-        #endregion  
+
+        #endregion
+
     }
 }
