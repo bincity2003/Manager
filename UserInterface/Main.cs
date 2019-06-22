@@ -12,7 +12,7 @@ namespace UserInterface
         #region Data declaration and definition
 
         const string DataPath = "Data";
-        const string Version = "V1.1";
+        const string Version = "V1.2";
         IOManager Manager = new IOManager(DataPath);
         XElement Configs;
 
