@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Newtonsoft.Json;
 
 namespace UserInterface
 {
@@ -20,6 +21,12 @@ namespace UserInterface
         {
             InitializeComponent();
             EmployeeName = name;
+            CheckFileAvailability();
+            Periods = RetrieveData();
+        }
+        ~Attendance()
+        {
+            Source.Dispose();
         }
 
         #region Control Handler
@@ -27,6 +34,7 @@ namespace UserInterface
         {
             Periods.Remove(FindSelectedPeriod());
             RefreshPanel();
+            PushData();
         }
 
         private void AButton_Click(object sender, EventArgs e)
@@ -34,6 +42,7 @@ namespace UserInterface
             Period period = new Period(FirstDay.Value, LastDay.Value);
             Periods.Add(period);
             RefreshPanel();
+            PushData();
         }
         #endregion
 
@@ -73,6 +82,40 @@ namespace UserInterface
             };
             HistoryBox.DataSource = Source;
             HistoryBox.DisplayMember = "Display";
+        }
+
+        private List<Period> RetrieveData()
+        {
+            List<Period> periods;
+            string Data = System.IO.File.ReadAllText(GetPath(EmployeeName));
+            try
+            {
+                periods = JsonConvert.DeserializeObject<List<Period>>(Data);
+            }
+            catch
+            {
+                periods = new List<Period>();
+            }
+            return periods;
+        }
+
+        private void PushData()
+        {
+            string Data = JsonConvert.SerializeObject(Periods);
+            System.IO.File.WriteAllText(GetPath(EmployeeName), Data);
+        }
+
+        private string GetPath(string name)
+        {
+            return System.IO.Path.Combine("Data", string.Concat(name.Split(' ')) + ".OFF");
+        }
+
+        private void CheckFileAvailability()
+        {
+            if (!System.IO.File.Exists(GetPath(EmployeeName)))
+            {
+                System.IO.File.Create(GetPath(EmployeeName));
+            }         
         }
         #endregion
     }
