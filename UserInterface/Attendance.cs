@@ -23,6 +23,7 @@ namespace UserInterface
             EmployeeName = name;
             CheckFileAvailability();
             Periods = RetrieveData();
+            RefreshPanel();
         }
         ~Attendance()
         {
@@ -49,15 +50,15 @@ namespace UserInterface
         #region Miscellaneous function
         public class Period
         {
-            public DateTime FirstDay { get; }
-            public DateTime LastDay { get; }
+            public DateTime FirstDay { get; set; }
+            public DateTime LastDay { get; set; }
 
             public Period(DateTime f, DateTime l)
             {
                 FirstDay = f;
                 LastDay = l;
             }
-
+            
             public int Length => (LastDay - FirstDay).Days;
             public string Display => $"{Length} {(Length == 1 ? "day" : "days")}: {FirstDay.ToShortDateString()} - {LastDay.ToShortDateString()}";
         }
@@ -88,11 +89,8 @@ namespace UserInterface
         {
             List<Period> periods;
             string Data = System.IO.File.ReadAllText(GetPath(EmployeeName));
-            try
-            {
-                periods = JsonConvert.DeserializeObject<List<Period>>(Data);
-            }
-            catch
+            periods = JsonConvert.DeserializeObject<List<Period>>(Data);
+            if (periods is null)
             {
                 periods = new List<Period>();
             }
@@ -114,7 +112,7 @@ namespace UserInterface
         {
             if (!System.IO.File.Exists(GetPath(EmployeeName)))
             {
-                System.IO.File.Create(GetPath(EmployeeName));
+                System.IO.File.Create(GetPath(EmployeeName)).Dispose();
             }         
         }
         #endregion

@@ -37,7 +37,6 @@
             this.LastDay = new System.Windows.Forms.DateTimePicker();
             this.DButton = new System.Windows.Forms.Button();
             this.AButton = new System.Windows.Forms.Button();
-            this.TotalDay = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.HistoryBox = new System.Windows.Forms.ListBox();
             this.tableLayoutPanel1.SuspendLayout();
@@ -86,7 +85,6 @@
             this.tableLayoutPanel2.Controls.Add(this.LastDay, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.DButton, 1, 2);
             this.tableLayoutPanel2.Controls.Add(this.AButton, 2, 2);
-            this.tableLayoutPanel2.Controls.Add(this.TotalDay, 0, 2);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 16);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -155,16 +153,6 @@
             this.AButton.UseVisualStyleBackColor = true;
             this.AButton.Click += new System.EventHandler(this.AButton_Click);
             // 
-            // TotalDay
-            // 
-            this.TotalDay.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.TotalDay.AutoSize = true;
-            this.TotalDay.Location = new System.Drawing.Point(8, 60);
-            this.TotalDay.Name = "TotalDay";
-            this.TotalDay.Size = new System.Drawing.Size(37, 13);
-            this.TotalDay.TabIndex = 7;
-            this.TotalDay.Text = "Total: ";
-            // 
             // groupBox2
             // 
             this.tableLayoutPanel1.SetColumnSpan(this.groupBox2, 2);
@@ -215,7 +203,6 @@
         private System.Windows.Forms.Button DButton;
         private System.Windows.Forms.Button AButton;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label TotalDay;
         private System.Windows.Forms.ListBox HistoryBox;
     }
 }
