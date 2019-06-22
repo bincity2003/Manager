@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Newtonsoft.Json;
 
@@ -13,6 +7,8 @@ namespace UserInterface
 {
     public partial class Attendance : Form
     {
+        #region Startip and declaration
+
         private List<Period> Periods;
         private BindingSource Source;
         private readonly string EmployeeName;
@@ -30,6 +26,8 @@ namespace UserInterface
             Source.Dispose();
         }
 
+        #endregion
+
         #region Control Handler
         private void DButton_Click(object sender, EventArgs e)
         {
@@ -45,6 +43,7 @@ namespace UserInterface
             RefreshPanel();
             PushData();
         }
+
         #endregion
 
         #region Miscellaneous function
@@ -115,6 +114,7 @@ namespace UserInterface
                 System.IO.File.Create(GetPath(EmployeeName)).Dispose();
             }         
         }
+
         #endregion
     }
 }
